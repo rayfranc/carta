@@ -13,8 +13,7 @@ router.get('/',[
 
 router.post('/',[
     validarToken,
-    check('categoria','El id no es valido').isMongoId(),
-    check('categoria').custom(existeCategoriaById),
+    check('categoria').notEmpty(),
     check('name','El nombre es obligatorio').not().isEmpty(),
     check('name').custom(existeSubcategoriaByNombre),
     validarCampos
