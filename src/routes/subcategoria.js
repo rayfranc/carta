@@ -15,7 +15,6 @@ router.post('/',[
     validarToken,
     check('categoria').notEmpty(),
     check('name','El nombre es obligatorio').not().isEmpty(),
-    check('name').custom(existeSubcategoriaByNombre),
     validarCampos
 ],postSubcategoria)
 
