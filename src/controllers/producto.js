@@ -76,12 +76,12 @@ const postProducto=async(req,res)=>{
     try{
        await producto.save()
     }catch(e){
-        res.json({
+        return res.json({
            message:'Ha habido un error',
            e
         })
     }
-    res.json({
+    return res.json({
         message:'El producto se ha insertado con exito',
         producto
     })
@@ -95,7 +95,7 @@ try{
         producto
     })
 }catch(error){
-    res.status(500).json({
+   return res.status(500).json({
         msg:'Error al eliminar'
     })
 }
