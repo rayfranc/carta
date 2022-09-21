@@ -13,13 +13,7 @@ const Subcategoria=require('../models/subcategoria')
 
    
     
-    const existeSubcategoriaByNombre=async(nomb)=>{
-        const nombre=nomb.toUpperCase()
-      const subcategoria= await Subcategoria.findOne({nombre:nombre})
-      if(subcategoria){
-          throw new Error(`La subcategoria ${nombre} ya existe`)
-      }     
-    }
+    
     
     const existeSubcategoriaById=async(id)=>{
         const subcategoria=await Subcategoria.findById({_id:id})
@@ -31,5 +25,4 @@ const Subcategoria=require('../models/subcategoria')
     module.exports={
         existeCorreo,
         existeSubcategoriaById,
-        existeSubcategoriaByNombre
     }
