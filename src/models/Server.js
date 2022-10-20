@@ -1,5 +1,6 @@
 const express=require('express')
 const cors=require('cors')
+const path=require('path')
 const {dbConnection}=require('../db/configdb')
 const PORT=process.env.PORT
 
@@ -22,14 +23,19 @@ class Server{
     }
 
     Routes(){
-        this.app.use('/auth',require('../routes/auth'))
-        this.app.use('/subcategoria',require('../routes/subcategoria'))
-        this.app.use('/producto',require('../routes/producto'))
+        this.app.use('/v1/auth',require('../routes/auth'))
+        this.app.use('/v1/subcategoria',require('../routes/subcategoria'))
+        this.app.use('/v1/producto',require('../routes/producto'))
+        this.app.use('/v1/categoria',require('../routes/categoria'))
+        this.app.use('/v1/negocio',require('../routes/negocio'))
+        this.app.use('/',require('../routes/home'))
         }
     
 
 Middlewares(){
     this.app.use(express.urlencoded({extended:false}))
+    this.app.use(express.static(path.resolve(__dirname, '../public')))
+    
     this.app.use(express.json())
     this.app.use(cors())
 }

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.806d0adc.css",
+    "main.js": "/static/js/main.96dcfbcc.js",
+    "static/media/Background.jpg": "/static/media/Background.bacd26ca39feb7ed77ad.jpg",
+    "static/media/margarita-g29be97c77_640.jpg": "/static/media/margarita-g29be97c77_640.8cfe3974fb9833ba0ffc.jpg",
+    "index.html": "/index.html",
+    "main.806d0adc.css.map": "/static/css/main.806d0adc.css.map",
+    "main.96dcfbcc.js.map": "/static/js/main.96dcfbcc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.806d0adc.css",
+    "static/js/main.96dcfbcc.js"
+  ]
+}

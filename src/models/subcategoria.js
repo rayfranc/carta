@@ -8,8 +8,8 @@ const SubCatSchema=Schema({
         unique:true
     },
     categoria:{
-        type:String,
-        enum:['TRAGOS','COCTELES','COMIDAS'],
+        type:Schema.Types.ObjectId,
+        ref:'Categoria',
         require:true
     }
 

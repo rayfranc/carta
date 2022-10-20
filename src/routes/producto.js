@@ -7,7 +7,10 @@ const { getProducto, postProducto, deleteProducto } = require('../controllers/pr
 const router=Router()
 
 router.get('/',[
+
 ],getProducto)
+
+
 
 
 router.post('/',[

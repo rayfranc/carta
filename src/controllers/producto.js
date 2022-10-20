@@ -1,71 +1,13 @@
 
 const Producto=require('../models/producto')
 
-const Subcategoria=require('../models/subcategoria')
 
 const getProducto=async(req,res)=>{
-    
-    const COCTELES= await Subcategoria.find({categoria:"COCTELES"})
-    const TRAGOS= await Subcategoria.find({categoria:"TRAGOS"})
-    const COMIDAS= await Subcategoria.find({categoria:"COMIDAS"})
-    const productos= await Producto.find()
-    .populate('subcategoria')
-    const responsecoc=new Object()
-    const responsetrag=new Object()
-    const responsecom=new Object()
-    
-    COCTELES.map(({_id:id,name})=> {
-        let result=[]
-        productos.forEach(producto=>{
-            const {subcategoria:{_id:idProd}}=producto
-            if(JSON.stringify(id)==JSON.stringify(idProd)){
-                
-                result.push(producto)
-            }
-        }
-        
-        )
-        responsecoc[name]=result
-        
-    });
 
-    
-    TRAGOS.map(({_id:id,name})=> {
-        let result=[]
-        productos.forEach(producto=>{
-            const {subcategoria:{_id:idProd}}=producto
-            if(JSON.stringify(id)==JSON.stringify(idProd)){
-                
-                result.push(producto)
-            }
-        }
-        
-        )
-        responsetrag[name]=result
-        
-    });
-
-    COMIDAS.map(({_id:id,name})=> {
-        let result=[]
-        productos.forEach(producto=>{
-            const {subcategoria:{_id:idProd}}=producto
-            if(JSON.stringify(id)==JSON.stringify(idProd)){
-                
-                result.push(producto)
-            }
-        }
-        
-        )
-        responsecom[name]=result
-        
-    });
-
+    const productos=await Producto.find()
     res.json({
-        "TRAGOS":responsetrag,
-        "COMIDAS":responsecom,
-        "COCTELES":responsecoc
-    })
-
+      productos
+  })
 
 }
 
