@@ -22,12 +22,19 @@ try{
         }
     )
     }
-
+    
+   const {_id}=categoria
 
     return res.json(
         {
             message:'La categoria se ha insertado',
-            categoria
+            categoria:{
+                _id,
+                name,
+                icon,
+                negocio,
+                subcategorias:[]
+            }
         })
 }
 
