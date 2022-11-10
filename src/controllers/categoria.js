@@ -28,7 +28,7 @@ try{
     return res.json(
         {
             message:'La categoria se ha insertado',
-            categoria:{
+            categorias:{
                 _id,
                 name,
                 icon,
